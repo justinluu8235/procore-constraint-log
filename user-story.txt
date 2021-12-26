@@ -1,0 +1,42 @@
+Summary Page
+1. User should be able to view see how many open constraints there are by quantity and broken down into priority levels
+
+2. User should be able to view a summary of constraints broken down by GC/Design/Owner/Sub 
+
+3. User should be able to view a summary of driver summary 
+
+
+
+List of Constraint Trackers 
+
+1. User should be able to see the name of the constraint tracker, who's in the group, and the number of open constraints
+
+2. User should be able to click on any of them and it should go to the summary of that tracker
+
+
+
+Constraint List Page 
+
+1. User should see to see a list of the constraints
+
+2. User should be able to click expand to see all the info and minimize to see less info
+
+3. User should be able to edit any of them without going to another Page
+
+4. User should be able to add a constraint without going to another page
+
+
+
+
+
+
+
+
+
+
+Requirements
+- 5 components
+- 5 routes 
+
+- 3 routes
+- 3 models - tracker for constraint tracker, open constraint items, closed constraint items
