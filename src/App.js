@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom'
 
 import TrackerIndex from './components/TrackerIndex/TrackerIndex'
+import NewTracker from './components/TrackerIndex/NewTracker'
+import ConstraintItemIndex from './components/ConstraintTracker/ConstraintItemIndex'
 
 class App extends Component {
   render() {
@@ -15,8 +17,9 @@ class App extends Component {
       <Router>
         <div>
           <Routes>
-            <Route exact path='/' element={<TrackerIndex/>}/>
-
+            <Route path='/' element={<TrackerIndex/>}/>
+            <Route path='/newTracker' element={<NewTracker/>}/>
+            <Route path='/constraints/:id' element={<ConstraintItemIndex/>}/>
           </Routes>
         </div>
       </Router>
