@@ -31,7 +31,16 @@ class ConstraintItemIndex extends Component {
 
     displayConstraintItems(){
         const displayItems = this.state.data.map((constraint, idx) => {
-            return <ConstraintItem key={idx} itemName={constraint.itemName}/>
+            return <ConstraintItem key={idx} 
+            driver={constraint.driver}
+            itemName={constraint.itemName}
+            bICTeam={constraint.bICTeam}
+            bICName={constraint.bICName}
+            description={constraint.description}
+            nextStep={constraint.nextStep}
+            targetDate={constraint.targetDate}
+            priorityLevel={constraint.priorityLevel}
+            />
         })
         return displayItems;
     }

@@ -1,0 +1,38 @@
+.navbar{
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    overflow: hidden;
+
+    background: #2f3437;
+}
+
+.home-icon{
+    -webkit-box-align: center;
+    align-items: center;
+    background: rgb(244, 126, 66);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    height: 52px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-width: 32px;
+    width: 32px;
+}
+
+.project-logo-image{
+    left: 50%;
+    height: 52px;
+    max-width: 153px;
+    padding: 0px 24px;
+    margin-right: 12px;
+    object-fit: contain;
+    pointer-events: none;
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    vertical-align: top;
+}
