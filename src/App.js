@@ -11,6 +11,7 @@ import TrackerIndex from './components/TrackerIndex/TrackerIndex'
 import NewTracker from './components/TrackerIndex/NewTracker'
 import ConstraintItemIndex from './components/ConstraintTracker/ConstraintItemIndex'
 import Test from "./components/Test";
+import EditTracker from "./components/TrackerIndex/EditTracker";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Routes>
             <Route path='/' element={<TrackerIndex/>}/>
             <Route path='/newTracker' element={<NewTracker/>}/>
+            <Route path='/editTracker/:id' element={<EditTracker/>}/>
             <Route path='/constraints/:id' element={<ConstraintItemIndex/>}/>
             <Route path='/test' element={<Test/>}/>
           </Routes>

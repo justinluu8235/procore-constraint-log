@@ -1,108 +1,114 @@
 import React, { Component } from 'react';
-import './ConstraintItem.css'
+import './Item.css'
 
-class ConstraintItem extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
+class Item extends Component {
     render() {
         return (
-
-
             <div class="new-tracker">
+                <h1 class="new-tracker-title">New Constraint Tracker</h1>
 
+                <div class="head-label-container">
+                    <span class="label-text">General</span>
+                </div>
 
                 <div class="new-tracker-container">
+                    <div class="general-info-container">
+                        <div>General Information</div>
+                    </div>
 
 
 
-
-                    <div class="new-tracker-group-container-1">
+                    <div class="new-tracker-group-container">
 
                         <div class="new-driver-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Driver: </span>
-                                {this.props.driver}
+                                Justin
                             </div>
                         </div>
 
                         <div class="new-constname-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Constraint Item Name: </span>
-                                {this.props.itemName}
+                                IQ Panel Procurement
                             </div>
                         </div>
 
                         <div class="new-email-subject-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Email Subject Line: </span>
-                                {this.props.emailSubject}
+                                Subject Line 1
                             </div>
                         </div>
 
                         <div class="bic-container" >
                             <div class="individual-member-container">
                                 <span class="tracker-group-field-text">BIC Team: </span>
-                                {this.props.bICTeam}
+                                Rosendin
 
                                 <span class="tracker-group-field-text">BIC Name: </span>
-                                {this.props.bICName}
+                                Colton
                             </div>
                         </div>
 
-                        <div class="description-container">
-                            <div class="new-field-container-1">
+                        <div class="new-description-container">
+                            <div class="new-field-container">
                                 <span class="tracker-group-field-text">Description: </span>
-                                <div class="description-display">
-                                    {this.props.description}
-                                </div>
-
+                                Conflicts within the middling orders were more pronounced than peaceful cooperation. Tariffs
+                                on imports were a boon to domestic manufacturers but a burden on merchants. Distribution of
+                                largesse from the central government, whether paintings donated to provincial museums or
+                                subsidies provided to struggling industries let to disputes about favoritism among cities and
+                                regions. The issue of state support for sectarian schools became a contentious issue between
+                                devout and secular citizens. The location of the railroad network, which speedily spread
+                                through most of Europe in the 1840s and 1850s, became a matter of virtual economic life and
+                                death across the map. And, … limitations on the right to vote on the basis of income were sore
                             </div>
                         </div>
 
-                        <div class="next-step-container">
-                            <div class="new-field-container-1">
+                        <div class="new-next-step-container">
+                            <div class="new-field-container">
                                 <span class="tracker-group-field-text">Next Step: </span>
-                                <div class="description-display">
-                                {this.props.nextStep}
-                                </div>
+                                Conflicts within the middling orders were more pronounced than peaceful cooperation. Tariffs
+                                on imports were a boon to domestic manufacturers but a burden on merchants. Distribution of
+                                largesse from the central government, whether paintings donated to provincial museums or
                             </div>
                         </div>
 
                         <div class="target-date-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Target Date: </span>
-                                {this.props.targetDate}
+                                12-31-21
                             </div>
                         </div>
 
                         <div class="priority-level-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Priority Level: </span>
-                                {this.props.priorityLevel}
+                                Urgent
                             </div>
                         </div>
 
-                        <div class="discard-create-container-6">
-                            <button class="discard-button-6">
+                        <div class="discard-create-container">
+                            <button class="discard-button">
                                 <span class="discard-text">Discard</span>
                             </button>
 
-                            <button class="create-button-6" >
+                            <button class="create-button" >
                                 <span class="create-text">Edit</span>
                             </button>
                         </div>
 
 
+
                     </div>
 
-                </div>
-            </div>
 
+                </div>
+
+
+            </div>
         )
     }
 }
 
-export default ConstraintItem;
+export default Item;

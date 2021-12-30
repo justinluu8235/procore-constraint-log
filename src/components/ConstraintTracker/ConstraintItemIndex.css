@@ -1,0 +1,31 @@
+.add-constraint-button{
+    margin-top:20px;
+    margin-left:30px;
+    font-size: 14px;
+    letter-spacing: 0.15px;
+    line-height: 20px;
+    background: rgb(255, 81, 0);
+    color: white;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: inherit;
+    font-weight: 600;
+    height: 36px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0px 6px;
+    position: relative;
+  
+    text-overflow: ellipsis;
+
+    vertical-align: middle;
+    white-space: nowrap;
+}

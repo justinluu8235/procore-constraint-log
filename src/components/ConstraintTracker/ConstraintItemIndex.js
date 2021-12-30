@@ -2,6 +2,9 @@ import React, {Component} from 'react' ;
 import axios from 'axios';
 import ConstraintItem from './ConstraintItem';
 import NewItem from './NewItem'
+import Navbar from '../Navbar';
+import ItemIndexHeader from './ItemIndexHeader';
+import './ConstraintItemIndex.css'
 
 class ConstraintItemIndex extends Component {
 
@@ -10,6 +13,7 @@ class ConstraintItemIndex extends Component {
         this.state = {
             data:[], 
             newConstraints: [],
+            trackerName: ''
         }
     }
 
@@ -21,7 +25,8 @@ class ConstraintItemIndex extends Component {
         axios.get(`http://localhost:3000/constraintItem/${trackerId}`)
         .then((response) => {
             this.setState({
-                data: response.data.constraintItemArr
+                data: response.data.constraintItemArr, 
+                trackerName: response.data.trackerName
             })
         })
         .catch((err) => {
@@ -34,6 +39,7 @@ class ConstraintItemIndex extends Component {
             return <ConstraintItem key={idx} 
             driver={constraint.driver}
             itemName={constraint.itemName}
+            emailSubject={constraint.emailSubject}
             bICTeam={constraint.bICTeam}
             bICName={constraint.bICName}
             description={constraint.description}
@@ -57,9 +63,11 @@ class ConstraintItemIndex extends Component {
     render(){
         return(
             <div>
+                <Navbar/>
+                <ItemIndexHeader trackerName={this.state.trackerName}/>
                 {this.displayConstraintItems()}
                 {this.state.newConstraints}
-                <input type="button" name="button" value="Add a Constraint" onClick={this.handleClick}/>
+                <input type="button" class="add-constraint-button" name="button" value="Add a Constraint" onClick={this.handleClick}/>
             </div>
         )
     }

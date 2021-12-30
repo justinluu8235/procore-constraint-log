@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Navbar from '../Navbar';
+import './NewTracker.css'
 
 class NewTracker extends Component{
 
@@ -18,33 +20,71 @@ class NewTracker extends Component{
 
     render(){
         return(
-            <div>
-                <p>New Tracker</p>
+            <div class="new-tracker">
+                <Navbar/>
+
+                <h1 class="new-tracker-title">New Constraint Tracker</h1>
+
+                <div class="head-label-container">
+                    <span class="label-text">General</span>
+                </div>
+
                 <form action="http://localhost:3000/constraintTracker" method="POST">
-                    
-                    <label for="trackerName"><p>Tracker Name</p></label>
-                    <input type="text" name="trackerName" />
+                <div class="new-tracker-container">
+                    <div class="general-info-container">
+                        <div>General Information</div>
+                    </div>
 
-                    <div id="all-members">
-                        <label for="memberName"><p>Group Member Name</p></label>
-                        <input type="text" name="memberName" />
-                        <label for="memberCompany"><p>Group Member Company</p></label>
-                        <input type="text" name="memberCompany" />
-
-                        <div id="member-fields">
-                            <label for="memberName"><p>Group Member Name</p></label>
-                            <input type="text" name="memberName" />
-                            <label for="memberCompany"><p>Group Member Company</p></label>
-                            <input type="text" name="memberCompany" />
+                    <div class="new-tracker-name-container">
+                        <span class="tracker-name-field-text">Tracker Name:</span>
+                        
+                        <div class="tracker-name-input-container">
+                            <input class="tracker-name-input" type="text" name="trackerName"></input>
                         </div>
                     </div>
-                    <label for="button"></label>
-                    <input type="button" name="button" value="Add another Member" id="addMemberButton" onClick={this.handleClick}/>
-            
 
-                    <br></br>
-                    <input type="submit" />
+                    <div class="new-tracker-group-container-5">
+                        <span class="tracker-group-field-text-1">Group Members:</span>
+                        <div class="group-members-container" id="all-members">
+                            <div class="individual-member-container">
+                                <span class="tracker-group-field-text">Name: </span>
+                                <input class="member-name-input" type="text" name="memberName"></input>
+
+                                <span class="tracker-group-field-text">Company: </span>
+                                <input class="member-company-input" type="text" name="memberCompany"></input>
+                            </div>
+
+                            <div class="individual-member-container" id="member-fields">
+                                <span class="tracker-group-field-text">Name: </span>
+                                <input class="member-name-input" type="text" name="memberName"></input>
+
+                                <span class="tracker-group-field-text">Company: </span>
+                                <input class="member-company-input" type="text" name="memberCompany"></input>
+                            </div>
+
+                        </div>
+                        <input type="button" name="button" class="add-button" value="Add another Member" id="addMemberButton" onClick={this.handleClick}/>
+                    </div>
+
+                </div>
+
+                <div class="submission-footer">
+                    <div class="discard-create-container">
+                        <button class="discard-button">
+                            <span class="discard-text">Discard</span>
+                        </button>
+                        <input type="submit" class="create-button-2" value="Create"/>
+                        
+                    </div>
+                </div>
+                
                 </form>
+                    
+
+
+         
+                    
+       
 
          
             </div>

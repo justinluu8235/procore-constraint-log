@@ -1,52 +1,14 @@
-import axios from 'axios';
-import React, { Component } from 'react';
-import IndividualTracker from './IndividualTracker';
-import Navbar from '../Navbar'
-import TrackersHeader from './TrackersHeader';
-import './TrackerIndex.css'
+import React, {Component} from 'react';
+import './TrackerTable.css'
 
-
-class TrackerIndex extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: []
-        }
-    }
-
-
-    componentDidMount() {
-        axios.get('http://localhost:3000/constraintTracker')
-            .then((response) => {
-                this.setState({
-                    data: response.data.constraintTrackerArray
-                })
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
-
-
-    displayTrackers() {
-        const displayTracker = this.state.data.map((tracker, idx) => {
-            return <IndividualTracker key={idx} id={tracker._id} trackerName={tracker.trackerName} group={tracker.group} constraintsOpen={tracker.constraintsOpen} />
-        })
-        return displayTracker;
-    }
-
-
-    render() {
-        return (
+class TrackerTable extends Component{
+    render(){
+        return(
             <div>
-                <Navbar />
-                <TrackersHeader />
-
                 <div class="divider"></div>
                 <div class="table-container">
                     <div class="table">
-
+                        
                         <div class="table-head-row">
                             <span class="empty-cell"></span>
 
@@ -70,7 +32,6 @@ class TrackerIndex extends Component {
                         </div>
 
                         <div class="table-body">
-                            {this.displayTrackers()}
                             {/* <div class="table-row">
                                 <span class="empty-cell"></span>
 
@@ -109,13 +70,12 @@ class TrackerIndex extends Component {
 
 
 
-
+                        
                     </div>
                 </div>
-
             </div>
         )
     }
 }
 
-export default TrackerIndex;
+export default TrackerTable ;

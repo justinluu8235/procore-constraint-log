@@ -1,0 +1,166 @@
+.header-bar{
+    margin:30px 20px 0 30px;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    min-height: 36px;
+    max-width: 1549px;
+}
+
+.settings-icon-container{
+    color: rgb(255, 81, 0);
+    cursor: pointer;
+    display: inline-flex;
+    flex: 0 0 auto;
+}
+
+.settings-icon{
+    color: rgb(255, 81, 0);
+}
+
+.header-title{
+    padding-right: 24px;
+    padding-left: 16px;
+    white-space: nowrap;
+    color: rgb(35, 39, 41);
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.15px;
+    line-height: 32px;
+    margin: 0px;
+}
+
+.tabs-bar{
+    /* align-self: flex-end; */
+    /* flex: 1 1 auto; */
+    width: 250px;
+    min-width: 100px;
+    overflow: hidden;
+}
+
+.tab-item{
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    line-height: 20px;
+    -webkit-box-align: center;
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px 12px;
+    position: relative;
+    white-space: nowrap;
+    color: rgb(35, 39, 41);
+    cursor: default;
+    box-shadow: 10px 20px 0 rgb(255, 81, 0);
+}
+
+.options-container{
+    flex: 0 0 auto;
+    margin-left: 500px;
+    align-self:flex-end;
+    padding-left: 16px;
+    padding-right:30px;
+    align-items: flex-start;
+ 
+    display: flex;
+    width: 300px;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+.export-button, .reports-button{
+    font-size: 14px;
+    letter-spacing: 0.15px;
+    line-height: 20px;
+    background: rgb(227, 230, 232);
+    color: rgb(35, 39, 41);
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: inherit;
+    font-weight: 600;
+    height: 36px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: 10px;
+    overflow: hidden;
+    padding: 0px 6px;
+
+    pointer-events: inherit;
+    text-overflow: ellipsis;
+    user-select: inherit;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.export-text, .export-text{
+    overflow: hidden;
+    padding: 0px 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.create-button-1{
+    font-size: 14px;
+    letter-spacing: 0.15px;
+    line-height: 20px;
+    background: rgb(255, 81, 0);
+    color: white;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: inherit;
+    font-weight: 600;
+    height: 36px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px 6px;
+    position: relative;
+    pointer-events: inherit;
+    text-overflow: ellipsis;
+    user-select: inherit;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-left:10px;
+}
+
+.create-index{
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    vertical-align: baseline;
+    line-height: 20px;
+}
+
+.create-text{
+    font-size: 14px;
+    letter-spacing: 0.15px;
+    line-height: 20px;
+    color: white;
+    overflow: hidden;
+    padding: 0px 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+}

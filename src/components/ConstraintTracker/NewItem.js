@@ -1,41 +1,80 @@
-import React, {Component} from 'react'; 
+import React, { Component } from 'react';
+import './NewItem.css'
 
 class NewItem extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <form action={`http://localhost:3000/constraintItem/${this.props.id}`} method="POST">
-                    
-                    <label for="driver"><p>Driver</p></label>
-                    <input type="text" name="driver" />
+                <div class="new-tracker-group-container">
+                    <form action={`http://localhost:3000/constraintItem/${this.props.id}`} method="POST">
+                        <div class="new-driver-container">
+                            <div class="new-field-container">
+                                <span class="tracker-group-field-text">Driver: </span>
+                                <input class="new-field-input" type="text" name="driver"></input>
+                            </div>
+                        </div>
 
-                    <label for="itemName"><p>Constraint Name</p></label>
-                    <input type="text" name="itemName" />
+                        <div class="new-constname-container">
+                            <div class="new-field-container">
+                                <span class="tracker-group-field-text">Constraint Item Name: </span>
+                                <input class="new-constname-input new-field-input" type="text" name="itemName"></input>
+                            </div>
+                        </div>
 
-                    <label for="bICTeam"><p>Ball In Court Team</p></label>
-                    <input type="text" name="bICTeam" />
+                        <div class="new-email-subject-container">
+                            <div class="new-field-container">
+                                <span class="tracker-group-field-text">Email Subject Line: </span>
+                                <input class="new-email-subject-input new-field-input" type="text" name="emailSubject"></input>
+                            </div>
+                        </div>
 
-                    <label for="bICName"><p>Ball In Court Name</p></label>
-                    <input type="text" name="bICName" />
+                        <div class="bic-container" >
+                            <div class="individual-member-container">
+                                <span class="tracker-group-field-text bic-team-text">BIC Team: </span>
+                                <input class="new-field-input" type="text" name="bICTeam"></input>
 
-                    <label for="description"><p>Description</p></label>
-                    <input type="text" name="description" />
+                                <span class="tracker-group-field-text">BIC Name: </span>
+                                <input class="new-field-input" type="text" name="bICName"></input>
+                            </div>
+                        </div>
 
-                    <label for="nextStep"><p>Next Steps</p></label>
-                    <input type="text" name="nextStep" />
+                        <div class="new-description-container">
+                            <div class="new-field-container">
+                                <span class="tracker-group-field-text">Description: </span>
+                                <textarea class="text-area-input" name="description" cols="50" rows="5"></textarea>
+                            </div>
+                        </div>
 
-                    <label for="targetDate"><p>Target Date</p></label>
-                    <input type="text" name="targetDate" />
+                        <div class="new-next-step-container">
+                            <div class="new-field-container">
+                                <span class="tracker-group-field-text">Next Step: </span>
+                                <textarea class="next-step-text-area" name="nextStep" cols="50" rows="5"></textarea>
+                            </div>
+                        </div>
 
-                    <label for="priorityLevel"><p>Priority Level</p></label>
-                    <input type="text" name="priorityLevel" />
+                        <div class="target-date-container">
+                            <div class="new-field-container">
+                                <span class="tracker-group-field-text">Target Date: </span>
+                                <input class="new-field-input" type="text" name="targetDate"></input>
+                            </div>
+                        </div>
 
+                        <div class="priority-level-container">
+                            <div class="new-field-container">
+                                <span class="tracker-group-field-text">Priority Level: </span>
+                                <input class="new-field-input" type="text" name="priorityLevel"></input>
+                            </div>
+                        </div>
 
+                        <div class="discard-create-container">
+                            <button class="discard-button">
+                                <span class="discard-text">Discard</span>
+                            </button>
 
-                    <br></br>
-                    <input type="submit" />
-                </form>
-
+                            <input type="submit" class="create-button-3" value="Create" />
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }
