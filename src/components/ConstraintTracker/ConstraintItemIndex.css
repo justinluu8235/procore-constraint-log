@@ -1,4 +1,4 @@
-.add-constraint-button{
+.add-constraint-button, .delete-tracker-button{
     margin-top:20px;
     margin-left:30px;
     font-size: 14px;
@@ -28,4 +28,15 @@
 
     vertical-align: middle;
     white-space: nowrap;
+}
+
+.add-delete-tracker-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.delete-tracker-button{
+    background: darkred;
+    margin-right:30px;
 }

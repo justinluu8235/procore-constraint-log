@@ -1,23 +1,34 @@
 import React, { Component } from 'react';
 import './ConstraintItem.css'
+import EditItem from './EditItem';
 
 class ConstraintItem extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            editItem : []
+        }
+    }
+
+    handleClick = () => {
+        let trimName = this.props.itemName.replace(/\s/g, "");
+        let hideDiv = document.querySelector(`.${trimName}`)
+        hideDiv.remove();
+        let temp = window.location.pathname.split('/')
+        let trackerID = temp[2];
+        this.setState({
+            editItem: [<EditItem trackerId={trackerID} itemId={this.props.id} key={this.props.keyC}/>]
+        })
     }
 
     render() {
+        let trimName = this.props.itemName.replace(/\s/g, "");
         return (
-
 
             <div class="new-tracker">
 
-
-                <div class="new-tracker-container">
-
-
-
+                <div class={`new-tracker-container ${trimName}`}>
 
                     <div class="new-tracker-group-container-1">
 
@@ -86,11 +97,13 @@ class ConstraintItem extends Component {
                         </div>
 
                         <div class="discard-create-container-6">
-                            <button class="discard-button-6">
+                            {/* <button class="discard-button-6">
                                 <span class="discard-text">Discard</span>
-                            </button>
-
-                            <button class="create-button-6" >
+                            </button> */}
+                            <form action={`http://localhost:3000/constraintItem/${this.props.id}/?_method=DELETE`} method="POST">
+                                 <input type="submit" class="discard-button-6" value="Discard" />      
+                            </form>
+                            <button class="create-button-6" onClick={this.handleClick}>
                                 <span class="create-text">Edit</span>
                             </button>
                         </div>
@@ -99,6 +112,7 @@ class ConstraintItem extends Component {
                     </div>
 
                 </div>
+                {this.state.editItem}
             </div>
 
         )

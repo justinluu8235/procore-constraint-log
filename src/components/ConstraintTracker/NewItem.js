@@ -31,7 +31,13 @@ class NewItem extends Component {
                         <div class="bic-container" >
                             <div class="individual-member-container">
                                 <span class="tracker-group-field-text bic-team-text">BIC Team: </span>
-                                <input class="new-field-input" type="text" name="bICTeam"></input>
+                                {/* <input class="new-field-input" type="text" name="bICTeam"></input> */}
+                                <select name="bICTeam" class="new-field-input">
+                                    <option value="Design Team">Design Team</option>
+                                    <option value="General Contractor">General Contractor</option>
+                                    <option value="Trade Partner">Trade Partner</option>
+                                    <option value="Owner">Owner</option>
+                                </select>
 
                                 <span class="tracker-group-field-text">BIC Name: </span>
                                 <input class="new-field-input" type="text" name="bICName"></input>
@@ -55,18 +61,25 @@ class NewItem extends Component {
                         <div class="target-date-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Target Date: </span>
-                                <input class="new-field-input" type="text" name="targetDate"></input>
+                                <input class="new-field-input" type="date" name="targetDate"></input>
                             </div>
                         </div>
 
                         <div class="priority-level-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Priority Level: </span>
-                                <input class="new-field-input" type="text" name="priorityLevel"></input>
+                                {/* <input class="new-field-input" type="text" name="priorityLevel"></input> */}
+                                <select name="priorityLevel" class="new-field-input">
+                                    <option value="Urgent">Urgent</option>
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                </select>
+
                             </div>
                         </div>
 
-                        <div class="discard-create-container">
+                        <div class="discard-create-container-3">
                             <button class="discard-button">
                                 <span class="discard-text">Discard</span>
                             </button>

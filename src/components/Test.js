@@ -4,7 +4,7 @@ import TrackersHeader from './TrackerIndex/TrackersHeader';
 // import TrackerTable from '../../resources/TrackerTable';
 // import NewTrackerTest from '../resources/NewTrackerTest';
 // import NewConstraintItemTest from '../resources/NewConstraintItemTest'
-import Item from '../resources/Item';
+// import Item from '../../public/resources/Item';
 
 class Test extends Component {
     render(){
@@ -12,7 +12,7 @@ class Test extends Component {
             <div>
                 <Navbar/>
                 {/* <NewConstraintItemTest/> */}
-                <Item/>
+                {/* <Item/> */}
             </div>
         )
     }

@@ -258,9 +258,8 @@
     overflow: hidden;
     padding: 0px 6px;
     position: relative;
-    pointer-events: none;
+
     text-overflow: ellipsis;
-    user-select: none;
     vertical-align: middle;
     white-space: nowrap;
 }

@@ -5,6 +5,8 @@ import NewItem from './NewItem'
 import Navbar from '../Navbar';
 import ItemIndexHeader from './ItemIndexHeader';
 import './ConstraintItemIndex.css'
+import ConstraintSummary from '../ConstraintSummary/ConstraintSummary';
+
 
 class ConstraintItemIndex extends Component {
 
@@ -13,7 +15,8 @@ class ConstraintItemIndex extends Component {
         this.state = {
             data:[], 
             newConstraints: [],
-            trackerName: ''
+            trackerName: '', 
+            stats: {}
         }
     }
 
@@ -26,7 +29,8 @@ class ConstraintItemIndex extends Component {
         .then((response) => {
             this.setState({
                 data: response.data.constraintItemArr, 
-                trackerName: response.data.trackerName
+                trackerName: response.data.trackerName, 
+                stats: response.data.stats
             })
         })
         .catch((err) => {
@@ -37,6 +41,8 @@ class ConstraintItemIndex extends Component {
     displayConstraintItems(){
         const displayItems = this.state.data.map((constraint, idx) => {
             return <ConstraintItem key={idx} 
+            keyC={idx}
+            id={constraint._id}
             driver={constraint.driver}
             itemName={constraint.itemName}
             emailSubject={constraint.emailSubject}
@@ -61,13 +67,26 @@ class ConstraintItemIndex extends Component {
 
 
     render(){
+        let temp = window.location.pathname.split('/')
+        let trackerId = temp[2];
         return(
             <div>
-                <Navbar/>
+
+                <Navbar />
                 <ItemIndexHeader trackerName={this.state.trackerName}/>
-                {this.displayConstraintItems()}
+                <ConstraintSummary stats={this.state.stats}/>
+                <div class="add-delete-tracker-container"> 
+                    <input type="button" class="add-constraint-button" name="button" value="Add a Constraint" onClick={this.handleClick}/>
+                    <form action={`http://localhost:3000/constraintTracker/${trackerId}/?_method=DELETE`} method="POST">
+                        <input type="submit" class="delete-tracker-button" name="button" value="Delete Tracker" onClick={this.handleClick}/>     
+                    </form>
+                    
+                </div>
+                
                 {this.state.newConstraints}
-                <input type="button" class="add-constraint-button" name="button" value="Add a Constraint" onClick={this.handleClick}/>
+                {this.displayConstraintItems()}
+                
+                
             </div>
         )
     }

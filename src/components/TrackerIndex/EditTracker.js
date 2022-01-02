@@ -11,8 +11,13 @@ class EditTracker extends Component {
         this.state = {
             data: [],
             firstNameInput: '',
-            firstCompanyInput: ''
+            firstCompanyInput: '', 
+            trackerNameVal: '', 
+            group:[], 
+            trackerID: ''
         }
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleClick() {
@@ -28,7 +33,12 @@ class EditTracker extends Component {
         allMembersDiv.appendChild(clone);
     }
 
-
+    handleChange(event){
+  
+        this.setState({
+            trackerNameVal: event.target.value
+        })
+    }
 
     componentDidMount() {
         let temp = window.location.pathname.split('/')
@@ -38,10 +48,13 @@ class EditTracker extends Component {
             .then((response) => {
                 let firstName = response.data.constraintTracker.group[0].name;
                 let firstCompany = response.data.constraintTracker.group[0].company;
+                let trackerName = response.data.constraintTracker.trackerName
                 this.setState({
                     data: response.data.constraintTracker,
                     firstNameInput: firstName,
-                    firstCompanyInput: firstCompany
+                    firstCompanyInput: firstCompany,
+                    trackerNameVal: trackerName, 
+                    trackerID: trackerId
                 })
 
             })
@@ -59,11 +72,16 @@ class EditTracker extends Component {
         .then((response) => {
             let group = response.data.constraintTracker.group;
             group.shift();
-
+       
             const displayGroupMembers = group.map((member, idx) => {
                 return  <EditMember key={idx} name={member.name}  company={member.company} /> 
             })
-            console.log(displayGroupMembers)
+     
+            this.setState({
+                group: displayGroupMembers
+            })
+
+            
             return displayGroupMembers;
         })
         .catch((err) => {
@@ -75,61 +93,66 @@ class EditTracker extends Component {
 
 
     render() {
+
+        let formLink = `http://localhost:3000/constraintTracker/${this.state.trackerID}`
+        
         return (
-            <div class="edit-tracker">
+            <div className="edit-tracker">
                 <Navbar />
 
-                <h1 class="edit-tracker-title">New Constraint Tracker</h1>
+                <h1 className="edit-tracker-title">New Constraint Tracker</h1>
 
-                <div class="head-label-container">
-                    <span class="label-text">General</span>
+                <div className="head-label-container">
+                    <span className="label-text">General</span>
                 </div>
-
-                <form action="http://localhost:3000/constraintTracker" method="POST">
-                    <div class="new-tracker-container">
-                        <div class="general-info-container">
+                
+                <form action={formLink} method="POST">
+                    <div className="new-tracker-container">
+                        <div className="general-info-container">
                             <div>General Information</div>
                         </div>
 
-                        <div class="new-tracker-name-container">
-                            <span class="tracker-name-field-text">Tracker Name:</span>
+                        <div className="new-tracker-name-container">
+                            <span className="tracker-name-field-text">Tracker Name:</span>
 
-                            <div class="tracker-name-input-container">
-                                <input class="tracker-name-input" type="text" name="trackerName" value={this.state.data.trackerName}></input>
+                            <div className="tracker-name-input-container">
+                                <input className="tracker-name-input" type="text" name="trackerName" value={this.state.trackerNameVal} onChange={this.handleChange}></input>
                             </div>
                         </div>
 
-                        <div class="new-tracker-group-container-5">
-                            <span class="tracker-group-field-text-1">Group Members:</span>
-                            <div class="group-members-container" id="all-members">
-                                <div class="individual-member-container">
-                                    <span class="tracker-group-field-text">Name: </span>
-                                    <input class="member-name-input" type="text" name="memberName" value={this.state.firstNameInput}></input>
+                        <div className="new-tracker-group-container-5">
+                            <span className="tracker-group-field-text-1">Group Members:</span>
+                            <div className="group-members-container" id="all-members">
+                                <div className="individual-member-container">
+                                    <span className="tracker-group-field-text">Name: </span>
+                                    <input className="member-name-input" type="text" name="memberName" value={this.state.firstNameInput} onChange={this.handleChange}></input>
 
-                                    <span class="tracker-group-field-text">Company: </span>
-                                    <input class="member-company-input" type="text" name="memberCompany" value={this.state.firstCompanyInput}></input>
+                                    <span className="tracker-group-field-text">Company: </span>
+                                    <input className="member-company-input" type="text" name="memberCompany" value={this.state.firstCompanyInput} onChange={this.handleChange}></input>
                                 </div>
                                 {this.displayMembers()}
-                                <div class="individual-member-container" id="member-fields">
-                                    <span class="tracker-group-field-text">Name: </span>
-                                    <input class="member-name-input" type="text" name="memberName"></input>
+                                {this.state.group}
+                                
+                                <div className="individual-member-container" id="member-fields">
+                                    <span className="tracker-group-field-text">Name: </span>
+                                    <input className="member-name-input" type="text" name="memberName"></input>
 
-                                    <span class="tracker-group-field-text">Company: </span>
-                                    <input class="member-company-input" type="text" name="memberCompany"></input>
+                                    <span className="tracker-group-field-text">Company: </span>
+                                    <input className="member-company-input" type="text" name="memberCompany"></input>
                                 </div>
 
                             </div>
-                            <input type="button" name="button" class="add-button" value="Add another Member" id="addMemberButton" onClick={this.handleClick} />
+                            <input type="button" name="button" className="add-button" value="Add another Member" id="addMemberButton" onClick={this.handleClick} />
                         </div>
 
                     </div>
 
-                    <div class="submission-footer">
-                        <div class="discard-create-container">
-                            <button class="discard-button">
-                                <span class="discard-text">Discard</span>
+                    <div className="submission-footer">
+                        <div className="discard-create-container">
+                            <button className="discard-button">
+                                <span className="discard-text">Discard</span>
                             </button>
-                            <input type="submit" class="create-button-2" value="Create" />
+                            <input type="submit" className="create-button-2" value="Update" />
 
                         </div>
                     </div>
