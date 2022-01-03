@@ -27,6 +27,7 @@ class EditItem extends Component {
         })
     }
 
+
     componentDidMount() {
         let trackerId = this.props.trackerId;
         let itemId = this.props.itemId;
@@ -54,8 +55,9 @@ class EditItem extends Component {
 
 
     render() {
+        let trimName = this.state.itemName.replace(/\s/g, "");
         return (
-            <div>
+            <div class={`${trimName}`}>
                 <div class="new-tracker-group-container">
                     <form action={`http://localhost:3000/constraintItem/edit/${this.props.itemId}`} method="POST">
                         <div class="new-driver-container">

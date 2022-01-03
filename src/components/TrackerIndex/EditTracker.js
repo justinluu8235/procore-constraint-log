@@ -149,9 +149,7 @@ class EditTracker extends Component {
 
                     <div className="submission-footer">
                         <div className="discard-create-container">
-                            <button className="discard-button">
-                                <span className="discard-text">Discard</span>
-                            </button>
+                           
                             <input type="submit" className="create-button-2" value="Update" />
 
                         </div>

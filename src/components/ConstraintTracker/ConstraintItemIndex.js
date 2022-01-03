@@ -65,6 +65,20 @@ class ConstraintItemIndex extends Component {
         })
     }
 
+    handleOverviewClick = () => {
+        let summaryDiv = document.querySelector('.constraint-summary');
+        summaryDiv.classList.toggle("hidden");
+
+        let toggleButton = document.querySelector('.toggle-summary-button');
+        if(toggleButton.value == "Hide Overview"){
+            toggleButton.value = "Show Overview";
+        }
+        else{
+            toggleButton.value = "Hide Overview"
+        }
+        
+    }
+
 
     render(){
         let temp = window.location.pathname.split('/')
@@ -74,7 +88,12 @@ class ConstraintItemIndex extends Component {
 
                 <Navbar />
                 <ItemIndexHeader trackerName={this.state.trackerName}/>
-                <ConstraintSummary stats={this.state.stats}/>
+
+                <h2 class="summary-title">Tracker Overview</h2>
+                <input type="button" class="toggle-summary-button" name="button" value="Hide Overview" onClick={this.handleOverviewClick}/>
+                <div class="constraint-summary">
+                    <ConstraintSummary stats={this.state.stats} />
+                </div>
                 <div class="add-delete-tracker-container"> 
                     <input type="button" class="add-constraint-button" name="button" value="Add a Constraint" onClick={this.handleClick}/>
                     <form action={`http://localhost:3000/constraintTracker/${trackerId}/?_method=DELETE`} method="POST">

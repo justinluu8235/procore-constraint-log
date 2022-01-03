@@ -5,6 +5,8 @@
     display: flex;
     min-height: 36px;
     max-width: 1549px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #d9d9d9;
 }
 
 .settings-icon-container{
