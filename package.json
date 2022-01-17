@@ -1,5 +1,8 @@
 {
   "name": "procore-constraint-log",
+  "engines": {
+    "node": "17.0.1"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
