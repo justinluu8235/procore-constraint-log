@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './EditItem.css'
+const {REACT_APP_SERVER_URL} = process.env;
 
 class EditItem extends Component {
     constructor(props) {
@@ -32,7 +33,7 @@ class EditItem extends Component {
         let trackerId = this.props.trackerId;
         let itemId = this.props.itemId;
 
-        axios.get(`http://localhost:3000/constraintItem/edit/${itemId}`)
+        axios.get(`${REACT_APP_SERVER_URL}/constraintItem/edit/${itemId}`)
             .then((response) => {
                 let data = response.data.constraintItem;
                 this.setState({
@@ -59,7 +60,7 @@ class EditItem extends Component {
         return (
             <div class={`${trimName}`}>
                 <div class="new-tracker-group-container">
-                    <form action={`http://localhost:3000/constraintItem/edit/${this.props.itemId}`} method="POST">
+                    <form action={`${REACT_APP_SERVER_URL}/constraintItem/edit/${this.props.itemId}`} method="POST">
                         <div class="new-driver-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Driver: </span>
@@ -138,7 +139,7 @@ class EditItem extends Component {
                             <input type="submit" class="create-button-3" value="Update" />
                         </div>
                     </form>
-                    <form action={`http://localhost:3000/constraintItem/${this.props.itemId}/?_method=DELETE`} method="POST">
+                    <form action={`${REACT_APP_SERVER_URL}/constraintItem/${this.props.itemId}/?_method=DELETE`} method="POST">
                                  <input type="submit" class="discard-button-3" value="Discard" />      
                     </form>
                 </div>

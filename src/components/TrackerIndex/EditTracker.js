@@ -3,6 +3,7 @@ import './EditTracker.css'
 import Navbar from '../Navbar';
 import axios from 'axios';
 import EditMember from './EditMember'
+const {REACT_APP_SERVER_URL} = process.env;
 
 class EditTracker extends Component {
 
@@ -44,7 +45,7 @@ class EditTracker extends Component {
         let temp = window.location.pathname.split('/')
         let trackerId = temp[2];
 
-        axios.get(`http://localhost:3000/constraintTracker/${trackerId}`)
+        axios.get(`${REACT_APP_SERVER_URL}/constraintTracker/${trackerId}`)
             .then((response) => {
                 let firstName = response.data.constraintTracker.group[0].name;
                 let firstCompany = response.data.constraintTracker.group[0].company;
@@ -68,7 +69,7 @@ class EditTracker extends Component {
         let temp = window.location.pathname.split('/')
         let trackerId = temp[2];
 
-        axios.get(`http://localhost:3000/constraintTracker/${trackerId}`)
+        axios.get(`${REACT_APP_SERVER_URL}/constraintTracker/${trackerId}`)
         .then((response) => {
             let group = response.data.constraintTracker.group;
             group.shift();
@@ -94,7 +95,7 @@ class EditTracker extends Component {
 
     render() {
 
-        let formLink = `http://localhost:3000/constraintTracker/${this.state.trackerID}`
+        let formLink = `${REACT_APP_SERVER_URL}/constraintTracker/${this.state.trackerID}`
         
         return (
             <div className="edit-tracker">
@@ -154,15 +155,7 @@ class EditTracker extends Component {
 
                         </div>
                     </div>
-
                 </form>
-
-
-
-
-
-
-
 
             </div>
         )

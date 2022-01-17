@@ -6,7 +6,7 @@ import Navbar from '../Navbar';
 import ItemIndexHeader from './ItemIndexHeader';
 import './ConstraintItemIndex.css'
 import ConstraintSummary from '../ConstraintSummary/ConstraintSummary';
-
+const { REACT_APP_SERVER_URL } = process.env;
 
 class ConstraintItemIndex extends Component {
 
@@ -25,7 +25,7 @@ class ConstraintItemIndex extends Component {
         let temp = window.location.pathname.split('/')
         let trackerId = temp[2];
 
-        axios.get(`http://localhost:3000/constraintItem/${trackerId}`)
+        axios.get(`${REACT_APP_SERVER_URL}/constraintItem/${trackerId}`)
         .then((response) => {
             this.setState({
                 data: response.data.constraintItemArr, 
@@ -96,7 +96,7 @@ class ConstraintItemIndex extends Component {
                 </div>
                 <div class="add-delete-tracker-container"> 
                     <input type="button" class="add-constraint-button" name="button" value="Add a Constraint" onClick={this.handleClick}/>
-                    <form action={`http://localhost:3000/constraintTracker/${trackerId}/?_method=DELETE`} method="POST">
+                    <form action={`${REACT_APP_SERVER_URL}/constraintTracker/${trackerId}/?_method=DELETE`} method="POST">
                         <input type="submit" class="delete-tracker-button" name="button" value="Delete Tracker" onClick={this.handleClick}/>     
                     </form>
                     

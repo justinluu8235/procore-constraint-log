@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './NewItem.css'
+const { REACT_APP_SERVER_URL } = process.env;
 
 class NewItem extends Component {
     render() {
         return (
             <div>
                 <div class="new-tracker-group-container">
-                    <form action={`http://localhost:3000/constraintItem/${this.props.id}`} method="POST">
+                    <form action={`${REACT_APP_SERVER_URL}/constraintItem/${this.props.id}`} method="POST">
                         <div class="new-driver-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Driver: </span>

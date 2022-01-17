@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
 import './NewTracker.css'
+const {REACT_APP_SERVER_URL} = process.env;
 
 class NewTracker extends Component{
 
@@ -29,7 +30,7 @@ class NewTracker extends Component{
                     <span class="label-text">General</span>
                 </div>
 
-                <form action="http://localhost:3000/constraintTracker" method="POST">
+                <form action={`${REACT_APP_SERVER_URL}/constraintTracker`} method="POST">
                 <div class="new-tracker-container">
                     <div class="general-info-container">
                         <div>General Information</div>

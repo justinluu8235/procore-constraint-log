@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ConstraintItem.css'
 import EditItem from './EditItem';
+const { REACT_APP_SERVER_URL } = process.env;
 
 class ConstraintItem extends Component {
 
@@ -100,7 +101,7 @@ class ConstraintItem extends Component {
                             {/* <button class="discard-button-6">
                                 <span class="discard-text">Discard</span>
                             </button> */}
-                            <form action={`http://localhost:3000/constraintItem/${this.props.id}/?_method=DELETE`} method="POST">
+                            <form action={`${REACT_APP_SERVER_URL}/constraintItem/${this.props.id}/?_method=DELETE`} method="POST">
                                  <input type="submit" class="discard-button-6" value="Discard" />      
                             </form>
                             <button class="create-button-6" onClick={this.handleClick}>

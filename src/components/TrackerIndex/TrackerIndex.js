@@ -4,6 +4,7 @@ import IndividualTracker from './IndividualTracker';
 import Navbar from '../Navbar'
 import TrackersHeader from './TrackersHeader';
 import './TrackerIndex.css'
+const {REACT_APP_SERVER_URL} = process.env;
 
 
 class TrackerIndex extends Component {
@@ -17,7 +18,7 @@ class TrackerIndex extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:3000/constraintTracker')
+        axios.get(`${REACT_APP_SERVER_URL}/constraintTracker`)
             .then((response) => {
                 this.setState({
                     data: response.data.constraintTrackerArray

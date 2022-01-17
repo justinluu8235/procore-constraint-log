@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Chart } from "react-google-charts";
 
 
+
 class ConstraintSummary extends Component {
 
   drawBICChart() {
