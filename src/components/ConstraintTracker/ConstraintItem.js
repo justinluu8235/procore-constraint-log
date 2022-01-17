@@ -54,13 +54,16 @@ class ConstraintItem extends Component {
                             </div>
                         </div>
 
-                        <div class="bic-container" >
-                            <div class="individual-member-container">
+                        <div class="bic-container-display" >
+                            <div class="individual-member-container-display">
+                                <div class="indiv-bic-display">
                                 <span class="tracker-group-field-text">BIC Team: </span>
-                                {this.props.bICTeam}
-
+                                <p>{this.props.bICTeam}</p>
+                                </div>
+                                <div class="indiv-bic-display">
                                 <span class="tracker-group-field-text">BIC Name: </span>
-                                {this.props.bICName}
+                                <p>{this.props.bICName}</p>
+                                </div>
                             </div>
                         </div>
 

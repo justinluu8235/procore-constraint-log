@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Chart } from "react-google-charts";
-
+import './ConstraintSummary.css'
 
 
 class ConstraintSummary extends Component {
@@ -30,8 +30,6 @@ class ConstraintSummary extends Component {
         chartType="PieChart"
         data={data}
         options={options}
-        width="50%"
-        height="400px"
         legendToggle
       />
     );
@@ -65,8 +63,6 @@ class ConstraintSummary extends Component {
         chartType="PieChart"
         data={data}
         options={options}
-        width="50%"
-        height="400px"
         legendToggle
       />
     );
@@ -94,8 +90,6 @@ class ConstraintSummary extends Component {
         chartType="PieChart"
         data={data}
         options={options}
-        width="50%"
-        height="400px"
         legendToggle
       />
     );
@@ -103,10 +97,16 @@ class ConstraintSummary extends Component {
 
   render() {
     return (
-      <div>
-        {this.drawBICChart()}
-        {this.drawPriorityChart()}
-        {this.drawDriverChart()}
+      <div class="summary-container">
+        <div class="indiv-chart">
+          {this.drawBICChart()}
+        </div>
+        <div class="indiv-chart">
+          {this.drawPriorityChart()}
+        </div>
+        <div class="indiv-chart">
+          {this.drawDriverChart()}
+        </div>
        
       </div>
     )

@@ -101,21 +101,21 @@ class EditItem extends Component {
                         <div class="new-description-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Description: </span>
-                                <textarea class="text-area-input" name="description" cols="50" rows="5" value={this.state.description} onChange={this.handleChange}></textarea>
+                                <textarea class="text-area-input-edit" name="description" cols="50" rows="5" value={this.state.description} onChange={this.handleChange}></textarea>
                             </div>
                         </div>
 
                         <div class="new-next-step-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Next Step: </span>
-                                <textarea class="next-step-text-area" name="nextStep" cols="50" rows="5" value={this.state.nextStep} onChange={this.handleChange}></textarea>
+                                <textarea class="next-step-text-area-edit" name="nextStep" cols="50" rows="5" value={this.state.nextStep} onChange={this.handleChange}></textarea>
                             </div>
                         </div>
 
                         <div class="target-date-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Target Date: </span>
-                                <input class="new-field-input" type="date" name="targetDate" value={this.state.targetDate} onChange={this.handleChange}></input>
+                                <input class="date-input-edit" type="date" name="targetDate" value={this.state.targetDate} onChange={this.handleChange}></input>
                             </div>
                         </div>
 

@@ -22,13 +22,15 @@ class EditMember extends Component {
     render() {
         return (
             
-            <div className="individual-member-container" id="member-fields">
-                
+            <div className="individual-member-container-edit" id="member-fields">
+                <div class="edit-member-row">
                 <span className="tracker-group-field-text">Name: </span>
                 <input className="member-name-input" type="text" name="memberName" value={this.state.memberName} onChange={this.handleChange}></input>
-
+                </div>
+                <div class="edit-member-row">
                 <span className="tracker-group-field-text">Company: </span>
                 <input className="member-company-input" type="text" name="memberCompany" value={this.state.memberCompany} onChange={this.handleChange}></input>
+                </div>
             </div>
         )
     }

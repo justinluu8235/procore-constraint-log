@@ -16,7 +16,7 @@ class TrackersHeader extends Component{
                     <div class="tab-item">Items</div>
                 </div>
 
-                <div class="options-container">
+                <div class="options-container-tracker-header">
                     
                     <div>
                         <button class="export-button">

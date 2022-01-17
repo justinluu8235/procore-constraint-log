@@ -83,11 +83,28 @@
     display: block;
     font-family: inherit;
     height: 36px;
-    width: 150px;
     padding: 0px 12px;
 }
 
-.text-area-input, .next-step-text-area{
+.date-input-edit{
+    max-width: 600px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    line-height: 20px;
+    background-color: white;
+    border-color: rgb(172, 181, 185);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(35, 39, 41);
+    display: block;
+    font-family: inherit;
+    height: 36px;
+    padding: 0px 12px;
+}
+
+.text-area-input-edit, .next-step-text-area-edit{
     max-width: 600px;
     font-size: 14px;
     font-weight: 400;
@@ -101,16 +118,14 @@
     color: rgb(35, 39, 41);
     display: block;
     margin-bottom:1em;
-    clear:both;
     font-family: inherit;
     height: 200px;
-    width: 600px;
     padding: 0px 12px;
 }
 
-.next-step-text-area{
+.next-step-text-area-edit{
     height: 100px;
-    width: 600px;
+    max-width: 600px;
 }
 
 .new-tracker-group-container{

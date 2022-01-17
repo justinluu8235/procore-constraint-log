@@ -4,8 +4,8 @@ import './Navbar.css'
 class Navbar extends Component {
     render(){
         return(
-            <nav class="navbar"id="navbar">
-                    <div class="container" >
+            <nav class="navbar" id="navbar">
+                    <div class="container" id="nav-container">
 
                         <div class="home-icon">
                             <svg focusable="false" height="16px" width="16px" viewBox="0 0 1024 1024">

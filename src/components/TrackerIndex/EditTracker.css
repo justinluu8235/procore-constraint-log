@@ -93,29 +93,37 @@
     display: flex;
     min-height: 200px;
     box-sizing: border-box;
-
     flex-direction:row;
+    flex-wrap:wrap;
     align-items:center;
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
     color: #343739;
 }
 
-.group-members-container{
-    height: 100%;
-    width: 500px;
+.group-members-container-edit{
+    height: auto;
+    width: auto;
     display:flex;
     flex-direction: column;
-    
 }
 
-.individual-member-container{
+.individual-member-container-edit{
     padding-top:15px;
     padding-left:25px;
     margin-bottom:10px;
     display: flex;
-    height: 48px;
+    flex-direction: row;
+    flex-wrap:wrap;
     align-items:center;
+}
+
+.edit-member-row{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    width: 300px;
+    height: 75px;
 }
 
 .member-name-input, .member-company-input{

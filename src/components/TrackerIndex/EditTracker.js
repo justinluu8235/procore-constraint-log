@@ -3,7 +3,7 @@ import './EditTracker.css'
 import Navbar from '../Navbar';
 import axios from 'axios';
 import EditMember from './EditMember'
-const {REACT_APP_SERVER_URL} = process.env;
+const { REACT_APP_SERVER_URL } = process.env;
 
 class EditTracker extends Component {
 
@@ -12,9 +12,9 @@ class EditTracker extends Component {
         this.state = {
             data: [],
             firstNameInput: '',
-            firstCompanyInput: '', 
-            trackerNameVal: '', 
-            group:[], 
+            firstCompanyInput: '',
+            trackerNameVal: '',
+            group: [],
             trackerID: ''
         }
 
@@ -34,8 +34,8 @@ class EditTracker extends Component {
         allMembersDiv.appendChild(clone);
     }
 
-    handleChange(event){
-  
+    handleChange(event) {
+
         this.setState({
             trackerNameVal: event.target.value
         })
@@ -54,7 +54,7 @@ class EditTracker extends Component {
                     data: response.data.constraintTracker,
                     firstNameInput: firstName,
                     firstCompanyInput: firstCompany,
-                    trackerNameVal: trackerName, 
+                    trackerNameVal: trackerName,
                     trackerID: trackerId
                 })
 
@@ -64,30 +64,30 @@ class EditTracker extends Component {
             })
     }
 
-    displayMembers(){
+    displayMembers() {
 
         let temp = window.location.pathname.split('/')
         let trackerId = temp[2];
 
         axios.get(`${REACT_APP_SERVER_URL}/constraintTracker/${trackerId}`)
-        .then((response) => {
-            let group = response.data.constraintTracker.group;
-            group.shift();
-       
-            const displayGroupMembers = group.map((member, idx) => {
-                return  <EditMember key={idx} name={member.name}  company={member.company} /> 
-            })
-     
-            this.setState({
-                group: displayGroupMembers
-            })
+            .then((response) => {
+                let group = response.data.constraintTracker.group;
+                group.shift();
 
-            
-            return displayGroupMembers;
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+                const displayGroupMembers = group.map((member, idx) => {
+                    return <EditMember key={idx} name={member.name} company={member.company} />
+                })
+
+                this.setState({
+                    group: displayGroupMembers
+                })
+
+
+                return displayGroupMembers;
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
 
 
@@ -96,17 +96,20 @@ class EditTracker extends Component {
     render() {
 
         let formLink = `${REACT_APP_SERVER_URL}/constraintTracker/${this.state.trackerID}`
-        
-        return (
-            <div className="edit-tracker">
-                <Navbar />
 
-                <h1 className="edit-tracker-title">New Constraint Tracker</h1>
+        return (
+            <div>
+                <Navbar />
+            
+            <div className="edit-tracker">
+                
+
+                <h1 className="edit-tracker-title">Edit Constraint Tracker</h1>
 
                 <div className="head-label-container">
                     <span className="label-text">General</span>
                 </div>
-                
+
                 <form action={formLink} method="POST">
                     <div className="new-tracker-container">
                         <div className="general-info-container">
@@ -123,23 +126,29 @@ class EditTracker extends Component {
 
                         <div className="new-tracker-group-container-5">
                             <span className="tracker-group-field-text-1">Group Members:</span>
-                            <div className="group-members-container" id="all-members">
-                                <div className="individual-member-container">
-                                    <span className="tracker-group-field-text">Name: </span>
-                                    <input className="member-name-input" type="text" name="memberName" value={this.state.firstNameInput} onChange={this.handleChange}></input>
-
-                                    <span className="tracker-group-field-text">Company: </span>
-                                    <input className="member-company-input" type="text" name="memberCompany" value={this.state.firstCompanyInput} onChange={this.handleChange}></input>
+                            <div className="group-members-container-edit" id="all-members">
+                                <div className="individual-member-container-edit">
+                                    <div class="edit-member-row">
+                                        <span className="tracker-group-field-text">Name: </span>
+                                        <input className="member-name-input" type="text" name="memberName" value={this.state.firstNameInput} onChange={this.handleChange}></input>
+                                    </div>
+                                    <div class="edit-member-row">
+                                        <span className="tracker-group-field-text">Company: </span>
+                                        <input className="member-company-input" type="text" name="memberCompany" value={this.state.firstCompanyInput} onChange={this.handleChange}></input>
+                                    </div>
                                 </div>
                                 {this.displayMembers()}
                                 {this.state.group}
-                                
-                                <div className="individual-member-container" id="member-fields">
-                                    <span className="tracker-group-field-text">Name: </span>
-                                    <input className="member-name-input" type="text" name="memberName"></input>
 
-                                    <span className="tracker-group-field-text">Company: </span>
-                                    <input className="member-company-input" type="text" name="memberCompany"></input>
+                                <div className="individual-member-container-edit" id="member-fields">
+                                    <div class="edit-member-row">
+                                        <span className="tracker-group-field-text">Name: </span>
+                                        <input className="member-name-input" type="text" name="memberName"></input>
+                                    </div>
+                                    <div class="edit-member-row">
+                                        <span className="tracker-group-field-text">Company: </span>
+                                        <input className="member-company-input" type="text" name="memberCompany"></input>
+                                    </div>
                                 </div>
 
                             </div>
@@ -150,13 +159,14 @@ class EditTracker extends Component {
 
                     <div className="submission-footer">
                         <div className="discard-create-container">
-                           
+
                             <input type="submit" className="create-button-2" value="Update" />
 
                         </div>
                     </div>
                 </form>
 
+            </div>
             </div>
         )
     }
