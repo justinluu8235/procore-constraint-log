@@ -66,14 +66,14 @@ class EditItem extends Component {
                         <div class="new-driver-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Driver: </span>
-                                <input class="new-field-input" type="text" name="driver" value={this.state.driver} onChange={this.handleChange}></input>
+                                <input class="new-field-input" type="text" name="driver" value={this.state.driver} onChange={this.handleChange} required></input>
                             </div>
                         </div>
 
                         <div class="new-constname-container">
                             <div class="new-field-container">
                                 <span class="tracker-group-field-text">Constraint Item Name: </span>
-                                <input class="new-constname-input new-field-input" type="text" name="itemName" value={this.state.itemName} onChange={this.handleChange}></input>
+                                <input class="new-constname-input new-field-input" type="text" name="itemName" value={this.state.itemName} onChange={this.handleChange} required></input>
                             </div>
                         </div>
 
