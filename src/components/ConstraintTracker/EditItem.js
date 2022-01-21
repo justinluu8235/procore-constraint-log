@@ -24,7 +24,7 @@ class EditItem extends Component {
     handleChange(event){
         let input = event.target.value
         this.setState({
-            [event.target.name]: input
+            [event.target.name]: input.trim()
         })
     }
 
@@ -57,6 +57,8 @@ class EditItem extends Component {
 
     render() {
         let trimName = this.state.itemName.replace(/\s/g, "");
+        trimName = trimName.replace("'", "");
+        trimName = trimName.replace(/[0-9]/g, '');
         return (
             <div class={`${trimName}`}>
                 <div class="new-tracker-group-container">

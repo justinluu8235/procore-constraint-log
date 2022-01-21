@@ -27,16 +27,14 @@
     -webkit-box-pack: center;
     justify-content: center;
     width: 32px;
-
-    
 }
 
 .project-logo{
     position:relative;
     background:white;
     height: 52px;
-   
 }
+
 .project-logo-image{
     left: 50%;
     height: 52px;

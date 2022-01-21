@@ -39,6 +39,7 @@ class ConstraintItemIndex extends Component {
     }
 
     displayConstraintItems(){
+        
         const displayItems = this.state.data.map((constraint, idx) => {
             return <ConstraintItem key={idx} 
             keyC={idx}

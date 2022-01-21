@@ -13,7 +13,10 @@ class ConstraintItem extends Component {
     }
 
     handleClick = () => {
+     
         let trimName = this.props.itemName.replace(/\s/g, "");
+        trimName = trimName.replace("'", "");
+        trimName = trimName.replace(/[0-9]/g, '');
         let hideDiv = document.querySelector(`.${trimName}`)
         hideDiv.remove();
         let temp = window.location.pathname.split('/')
@@ -25,6 +28,9 @@ class ConstraintItem extends Component {
 
     render() {
         let trimName = this.props.itemName.replace(/\s/g, "");
+  
+        trimName = trimName.replace("'", "");
+        trimName = trimName.replace(/[0-9]/g, '');
         return (
 
             <div class="new-tracker">
